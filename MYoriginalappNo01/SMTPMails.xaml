@@ -6,11 +6,11 @@
         xmlns:local="clr-namespace:MYoriginalappNo01"
         mc:Ignorable="d"
         Background="cornflowerblue"
-        Title="SMTPMails" Height="380" Width="410">
+        Title="SMTPMails" Height="430" Width="410">
     <Window.Resources>
         <Style x:Key="PressEffectButton" TargetType="{x:Type Button}">
             <Setter Property="Background" Value="#4169e1"/>
-            <Setter Property="Foreground" Value="#333333"/>
+            <Setter Property="Foreground" Value="White"/>
             <Setter Property="BorderBrush" Value="#4169e1"/>
             <Setter Property="BorderThickness" Value="1"/>
             <Setter Property="Padding" Value="5,2"/>
@@ -40,11 +40,13 @@
         <Button Click="FinishWorkExit" FontSize="20" Canvas.Left="287" Canvas.Top="21" HorizontalAlignment="Center" VerticalAlignment="Center" Width="92" Style="{StaticResource PressEffectButton}">戻る</Button>
         <TextBox AcceptsReturn="False" TextWrapping="Wrap" Name="Subject" Canvas.Left="18" Canvas.Top="139" Height="21" Width="226" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBox>
         <TextBox AcceptsReturn="True" TextWrapping="Wrap" Name="Adress" Canvas.Left="20" Canvas.Top="92" Height="20" Width="224" HorizontalAlignment="Left" VerticalAlignment="Center"></TextBox>
-        <TextBox AcceptsReturn="True" TextWrapping="Wrap" Name="Mailtext" Canvas.Left="20" Canvas.Top="192" Height="150" Width="359" HorizontalAlignment="Center" VerticalAlignment="Top"></TextBox>
-        <TextBlock FontSize="16" Canvas.Left="132" Height="23" Width="138" HorizontalAlignment="Center" VerticalAlignment="Top" Canvas.Top="4">利用するメールを選択</TextBlock>
-        <TextBlock FontSize="20" Canvas.Left="20" Canvas.Top="65" Height="25" Width="46" HorizontalAlignment="Left" VerticalAlignment="Center">宛先</TextBlock>
-        <TextBlock FontSize="20" Canvas.Left="20" Canvas.Top="112" Height="25" Width="46" HorizontalAlignment="Center" VerticalAlignment="Top">件名</TextBlock>
-        <TextBlock FontSize="20" Canvas.Left="18" Canvas.Top="160" Height="25" Width="46" HorizontalAlignment="Left" VerticalAlignment="Top">本文</TextBlock>
+        <TextBox AcceptsReturn="True" TextWrapping="Wrap" Name="CC" Canvas.Left="18" Canvas.Top="192" Height="20" Width="224" HorizontalAlignment="Center" VerticalAlignment="Top"></TextBox>
+        <TextBox AcceptsReturn="True" TextWrapping="Wrap" Name="Mailtext" Canvas.Left="18" Canvas.Top="239" Height="150" Width="358" HorizontalAlignment="Left" VerticalAlignment="Top"></TextBox>
+        <TextBlock FontSize="16" Canvas.Left="132" Height="23" Width="138" HorizontalAlignment="Center" VerticalAlignment="Top" Canvas.Top="4" Foreground="White">利用するメールを選択</TextBlock>
+        <TextBlock FontSize="20" Canvas.Left="20" Canvas.Top="65" Height="25" Width="46" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="White">宛先</TextBlock>
+        <TextBlock FontSize="20" Canvas.Left="20" Canvas.Top="112" Height="25" Width="46" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="White">件名</TextBlock>
+        <TextBlock FontSize="20" Canvas.Left="22" Canvas.Top="165" Height="25" Width="46" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="White">CC</TextBlock>
+        <TextBlock FontSize="20" Canvas.Left="18" Canvas.Top="212" Height="25" Width="46" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="White" RenderTransformOrigin="0.598,-0.626">本文</TextBlock>
         <TextBox x:Name="TsubasaMailAddress" Canvas.Left="287" Canvas.Top="98" Height="27" Width="113" HorizontalAlignment="Left" VerticalAlignment="Center" Visibility="Collapsed"/>
         <TextBox x:Name="MicrosoftPassword" Width="113"  Canvas.Left="287" Canvas.Top="139" Height="27" HorizontalAlignment="Left" VerticalAlignment="Center" Visibility="Collapsed" />
         <Button Height="72" Width="120" RenderTransformOrigin="3.005,1.718" Canvas.Left="280" Canvas.Top="94" HorizontalAlignment="Left" VerticalAlignment="Center" Visibility="Collapsed"></Button>

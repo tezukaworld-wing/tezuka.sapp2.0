@@ -82,6 +82,7 @@ namespace MYoriginalappNo01
         public void FinishWork(object sender, EventArgs e)
         {
             DateTime dt = DateTime.Now;
+
             string subject = $"［レポート]{ResettingName.Text + dt.ToString("yyyy年MM月dd日 (ddd)")}";
             ProcessStartInfo pi = new ProcessStartInfo()
             {
@@ -216,7 +217,7 @@ namespace MYoriginalappNo01
         }
         #endregion
 
-        //SMTPメール送信画面
+        #region 別ウィンドウ追加
         public void BeginWork(object sender, EventArgs e)
         {
             SMTPMails sw = new SMTPMails();
@@ -224,17 +225,25 @@ namespace MYoriginalappNo01
 
         }
 
-
-        //アプリ終了
-        private void Close(object sender, EventArgs e)
-        {
-            this.Close();
-        }
         private void SettingWindow(object sender, RoutedEventArgs e)
         {
             AccountSettings sw = new AccountSettings();
             sw.Show();
 
+        }
+
+        private void test(object sender, RoutedEventArgs e)
+        {
+            ReadMe sw = new ReadMe();
+            sw.Show();
+        }
+
+        #endregion
+
+        //アプリ終了
+        private void Close(object sender, EventArgs e)
+        {
+            this.Close();
         }
 
         private void ResettingUser(object sender, RoutedEventArgs e)
@@ -249,12 +258,6 @@ namespace MYoriginalappNo01
             {
             fileIo.UserName(ResettingName.Text);
             }
-        }
-
-        private void test(object sender, RoutedEventArgs e)
-        {
-            ReadMe sw = new ReadMe();
-            sw.Show();
         }
     }
 }

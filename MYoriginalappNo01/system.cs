@@ -64,5 +64,14 @@ namespace MYoriginalappNo01
                 writer.WriteLine(TextContents);
             }
         }
+        public void CC(string TextContents)
+        {
+
+            string filePath = @"CC.txt";
+            using (StreamWriter writer = new StreamWriter(filePath))
+            {
+                writer.WriteLine(TextContents);
+            }
+        }
     }
 }

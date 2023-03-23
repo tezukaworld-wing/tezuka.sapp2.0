@@ -5,13 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MYoriginalappNo01"
         mc:Ignorable="d"
-        Background="sandybrown"
+        Background="darkturquoise"
         Title="アカウント設定" Height="250" Width="310">
     <Window.Resources>
         <Style x:Key="PressEffectButton" TargetType="{x:Type Button}">
-            <Setter Property="Background" Value="#e9967a"/>
-            <Setter Property="Foreground" Value="#333333"/>
-            <Setter Property="BorderBrush" Value="#cd853f"/>
+            <Setter Property="Background" Value="paleturquoise"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="BorderBrush" Value="paleturquoise"/>
             <Setter Property="BorderThickness" Value="1"/>
             <Setter Property="Padding" Value="5,2"/>
             <Setter Property="Template">
@@ -37,9 +37,9 @@
     
     <Canvas Loaded="loadExample3">
         <Button Height="21" Width="83" Canvas.Left="198" Canvas.Top="21" x:Name="設定完了" Click="Finish" RenderTransformOrigin="0.439,0.548" Content="設定完了" HorizontalAlignment="Left" VerticalAlignment="Center" Style="{StaticResource PressEffectButton}"/>
-        <TextBlock Canvas.Left="25" Canvas.Top="16" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Top"><Run Text="メールアドレス"/></TextBlock>
-        <TextBlock Canvas.Left="25" Canvas.Top="144" FontSize="24" HorizontalAlignment="Left" VerticalAlignment="Top"><Run Text="Microsoftパスワード"/></TextBlock>
-        <TextBlock Canvas.Left="25" Canvas.Top="80" FontSize="24" HorizontalAlignment="Left" VerticalAlignment="Top"><Run Text="ジョブカン登録パスワード"/></TextBlock>
+        <TextBlock Canvas.Left="25" Canvas.Top="16" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Top"><Run Text="メールアドレス" Foreground="White"/></TextBlock>
+        <TextBlock Canvas.Left="25" Canvas.Top="144" FontSize="24" HorizontalAlignment="Left" VerticalAlignment="Top"><Run Text="Microsoftパスワード" Foreground="White"/></TextBlock>
+        <TextBlock Canvas.Left="25" Canvas.Top="80" FontSize="24" HorizontalAlignment="Left" VerticalAlignment="Top"><Run Text="ジョブカン登録パスワード" Foreground="White"/></TextBlock>
         <TextBox x:Name="MicrosoftMailAdress" Canvas.Left="25" Canvas.Top="53" Height="27" Width="256" HorizontalAlignment="Center" VerticalAlignment="Top"/>
         <PasswordBox x:Name="JobcanPassword" Width="256"  Canvas.Left="25" Canvas.Top="112" Height="27" HorizontalAlignment="Left" VerticalAlignment="Center" />
         <PasswordBox x:Name="MicrosoftPassword" Width="256"  Canvas.Left="25" Canvas.Top="181" Height="27" HorizontalAlignment="Left" VerticalAlignment="Center" />

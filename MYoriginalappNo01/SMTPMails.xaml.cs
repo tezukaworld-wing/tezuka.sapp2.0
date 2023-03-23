@@ -25,6 +25,7 @@ namespace MYoriginalappNo01
             this.Close();
             system fileIo = new system();
             ComboBoxItem selectedItem = (ComboBoxItem)MailsBox.SelectedItem;
+            fileIo.CC(CC.Text);
             if (selectedItem != null)
             {
                 if (selectedItem.Name == "Dailyreport")
@@ -75,6 +76,7 @@ namespace MYoriginalappNo01
             }
             string leavingwork = System.IO.File.ReadAllText(@"C:Leavingwork.txt");
             string dailyreport = System.IO.File.ReadAllText(@"C:Dailyreport.txt");
+
             ComboBoxItem selectedItem = (ComboBoxItem)MailsBox.SelectedItem;
 
 
@@ -116,8 +118,11 @@ namespace MYoriginalappNo01
         {
             string filePath = @"TsubasaMailAddress.txt";
             TsubasaMailAddress.Text = String.Join("\r\n", File.ReadAllLines(filePath));
+            string filePath2 = @"CC.txt";
+            CC.Text = String.Join("\r\n", File.ReadAllLines(filePath2));
             string filePath3 = @"MicrosoftPass.txt";
             MicrosoftPassword.Text = String.Join("\r\n", File.ReadAllLines(filePath3));
+
 
         }
 
@@ -128,8 +133,10 @@ namespace MYoriginalappNo01
 
                 string from = TsubasaMailAddress.Text;
                 string to = Adress.Text;
+              
                 string subject = Subject.Text;
                 string body = Mailtext.Text;
+                string cc = "tezuka.w@world-wing.com";
                 string smtpServer = "smtp-mail.outlook.com";
                 int port = 587;
                 string username = TsubasaMailAddress.Text;
@@ -141,6 +148,7 @@ namespace MYoriginalappNo01
                 client.EnableSsl = true;
 
                 MailMessage message = new MailMessage(from, to, subject, body);
+                message.CC.Add(cc);
                 client.Send(message);
 
                 MessageBox.Show("メールが送信されました。");

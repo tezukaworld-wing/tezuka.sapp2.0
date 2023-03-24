@@ -31,10 +31,12 @@ namespace MYoriginalappNo01
                 if (selectedItem.Name == "Dailyreport")
                 {
                     fileIo.Dailyreport(Mailtext.Text);
+                    MessageBox.Show("入力内容を保存しました");
                 }
                 else if (selectedItem.Name == "Leavingwork")
                 {
                     fileIo.Leavingwork(Mailtext.Text);
+                    MessageBox.Show("入力内容を保存しました");
                 }
             }
             else
@@ -125,7 +127,7 @@ namespace MYoriginalappNo01
 
 
         }
-
+        #region メール送信
         private void SendMail(object sender,EventArgs e) 
         {
             try
@@ -133,10 +135,10 @@ namespace MYoriginalappNo01
 
                 string from = TsubasaMailAddress.Text;
                 string to = Adress.Text;
-              
+                string CCtext = CC.Text;
                 string subject = Subject.Text;
                 string body = Mailtext.Text;
-                string cc = "tezuka.w@world-wing.com";
+                string cc = CCtext;
                 string smtpServer = "smtp-mail.outlook.com";
                 int port = 587;
                 string username = TsubasaMailAddress.Text;
@@ -148,7 +150,10 @@ namespace MYoriginalappNo01
                 client.EnableSsl = true;
 
                 MailMessage message = new MailMessage(from, to, subject, body);
-                message.CC.Add(cc);
+                if (!string.IsNullOrEmpty(cc))
+                {
+                    message.CC.Add(cc);
+                }
                 client.Send(message);
 
                 MessageBox.Show("メールが送信されました。");
@@ -160,10 +165,12 @@ namespace MYoriginalappNo01
                     if (selectedItem.Name == "Dailyreport")
                     {
                         fileIo.Dailyreport(Mailtext.Text);
+                        MessageBox.Show("入力内容を保存しました");
                     }
                     else if (selectedItem.Name == "Leavingwork")
                     {
                         fileIo.Leavingwork(Mailtext.Text);
+                        MessageBox.Show("入力内容を保存しました");
                     }
                     this.Close();
                 }
@@ -177,6 +184,6 @@ namespace MYoriginalappNo01
 
             }
         }
-
+        #endregion
     }
 }

@@ -13,17 +13,26 @@ namespace MYoriginalappNo01
     {
         public ReadMe()
         {
-            InitializeComponent();
+            InitializeComponent(); 
         }
         private void Readmee(object sender, EventArgs e)
         {
-            string filePath = @"readme.txt";
-            Subject.Text = String.Join(Environment.NewLine, File.ReadAllLines(filePath));
+            string filePath1 = @"readme.txt";
+            string filePath2 = @"UserName.txt";
+            Subject.Text = String.Join(Environment.NewLine, File.ReadAllLines(filePath1));
+            hidden.Text = String.Join("", File.ReadAllLines(filePath2));
         }
 
         private void close(object sender, EventArgs e)
         {
             this.Close();
+            if (String.IsNullOrWhiteSpace(hidden.Text))
+            {
+                UserSetting newWindow = new UserSetting();
+                newWindow.Show();
+            }
+
+
         }
 
         #region "最大化・最小化・閉じるボタンの非表示設定"

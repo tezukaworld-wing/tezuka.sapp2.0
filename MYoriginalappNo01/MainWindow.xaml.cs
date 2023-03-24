@@ -82,8 +82,9 @@ namespace MYoriginalappNo01
         public void FinishWork(object sender, EventArgs e)
         {
             DateTime dt = DateTime.Now;
-
-            string subject = $"［レポート]{ResettingName.Text + dt.ToString("yyyy年MM月dd日 (ddd)")}";
+            string Username = System.IO.File.ReadAllText(@"C:Username.txt");
+            //string subject = $"［レポート]{ResettingName.Text + dt.ToString("yyyy年MM月dd日 (ddd)")}";
+            string subject = $"［レポート]{Username + dt.ToString("yyyy年MM月dd日 (ddd)")}";
             ProcessStartInfo pi = new ProcessStartInfo()
             {
                 FileName = $"\"https://outlook.office.com/owa/?subject={Uri.EscapeDataString(subject)}&body=お疲れ様です。～のレポートが完成したので、ご確認ください。&to=manabiya-report@world-wing.com&path=/mail/action/compose\"",
@@ -207,11 +208,8 @@ namespace MYoriginalappNo01
             ResettingName.Text = String.Join("", File.ReadAllLines(filePath));
             if (String.IsNullOrWhiteSpace(ResettingName.Text))
             {
-
-                UserSetting sw = new UserSetting();
-                ReadMe sw2 = new ReadMe();
+                ReadMe sw = new ReadMe();
                 sw.Show();
-                sw2.Show();
             }
 
         }
@@ -240,7 +238,7 @@ namespace MYoriginalappNo01
 
         #endregion
 
-        //アプリ終了
+        #region 終了時の処理
         private void Close(object sender, EventArgs e)
         {
             this.Close();
@@ -259,6 +257,7 @@ namespace MYoriginalappNo01
             fileIo.UserName(ResettingName.Text);
             }
         }
+        #endregion
     }
 }
 

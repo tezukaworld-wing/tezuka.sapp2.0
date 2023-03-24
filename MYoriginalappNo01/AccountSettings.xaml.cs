@@ -37,7 +37,15 @@ namespace MYoriginalappNo01
             fileIo.TsubasaMailAddress(MicrosoftMailAdress.Text);
             fileIo.JobcanPass(JobcanPassword.Password);
             fileIo.MicrosoftPass(MicrosoftPassword.Password);
-            this.Close();
+            if (String.IsNullOrWhiteSpace(MicrosoftMailAdress.Text) || String.IsNullOrWhiteSpace(JobcanPassword.Password) || String.IsNullOrWhiteSpace(MicrosoftPassword.Password))
+            {
+                MessageBox.Show("アカウント情報を入力してください。", ":⚠:警告:⚠:", MessageBoxButton.OK);
+            }
+            else
+            {
+                this.Close();
+            }
+
         }
         #endregion
 

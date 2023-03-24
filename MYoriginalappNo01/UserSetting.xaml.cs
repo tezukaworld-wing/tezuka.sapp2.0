@@ -17,9 +17,17 @@ namespace MYoriginalappNo01
         {
             InitializeComponent();
             this.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+            this.IsEnabled = true;
+            foreach (Window window in Application.Current.Windows)
+            {
+                if (window != this)
+                {
+                    window.IsEnabled = false;
+                }
+            }
 
         }
-
+        #region 閉じるボタンのイベント
         private void FinishWindow(object sender, EventArgs e)
         {
             system fileIo = new system();
@@ -30,13 +38,19 @@ namespace MYoriginalappNo01
             }
             else
             {
-
                 this.Close();
-                
-
+                AccountSettings newWindow = new AccountSettings();
+                newWindow.Show();
+                foreach (Window window in Application.Current.Windows)
+                {
+                    if (window != this)
+                    {
+                        window.IsEnabled = true;
+                    }
+                }
             }
         }
-
+        #endregion
         private void Namebox(object sender, EventArgs e)
         {
             string filePath = @"UserName.txt";

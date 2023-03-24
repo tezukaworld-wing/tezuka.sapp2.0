@@ -37,6 +37,7 @@
     <Canvas Loaded="Readmee">
         <TextBlock HorizontalAlignment="Left" FontSize="60" Height="77" VerticalAlignment="Center" Width="432" Canvas.Left="19" Canvas.Top="13">本アプリの使い方</TextBlock>
         <TextBox AcceptsReturn="True" TextWrapping="Wrap" Name="Subject" Canvas.Left="19" Canvas.Top="98" Height="219" Width="555" HorizontalAlignment="Left" VerticalAlignment="Center" IsReadOnly="True"></TextBox>
+        <TextBox HorizontalAlignment="Left" Height="28" VerticalAlignment="Top" Width="60" Canvas.Left="10" Canvas.Top="326" Name="hidden" Visibility="Collapsed"></TextBox>
         <Button Canvas.Left="473" Canvas.Top="23" Height="60" Width="101" HorizontalAlignment="Left" VerticalAlignment="Center" Style="{StaticResource PressEffectButton}" Click="close">閉じる</Button>
     </Canvas>
 </Window>
